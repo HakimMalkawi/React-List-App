@@ -1,0 +1,22 @@
+:root {
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --darker: #1f1f1f;
+    --dark: #303952;
+    --light: #f1f1f1;   
+    --teal: teal;   }
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--light) }
+
+#root {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: var(--darker);    }

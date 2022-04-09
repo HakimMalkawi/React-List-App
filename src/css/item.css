@@ -1,0 +1,125 @@
+.item-container,
+.item-content,
+.item-controls {
+    display: grid;  }
+
+.item-container {
+    grid-template: repeat(2, min-content) / 100%;
+    grid-template-areas: 
+        "item"
+        "divider"   ;
+    grid-gap: 2rem;
+    align-items: center;
+    width: 100%;
+    padding: 0rem 1.1rem; }
+
+.item-content {
+    grid-area: item;
+    grid-template: auto / repeat(2, min-content);
+    grid-template-areas: "check label"; }
+
+.item-check,
+.item-label,
+.item-sub,
+.item-count { position: relative; }
+
+.item-check {
+    align-self: center;
+    justify-self: center;
+    z-index: 0;
+    height: 2.1rem;
+    width: 2.1rem;
+    cursor: pointer;    }
+
+.item-check::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -.3rem;
+    left: -.6rem;
+    height: 3rem;
+    width: 3rem;
+    background: var(--dark);
+    outline: 3px solid var(--light);
+    border: none;
+    border-radius: 100%;    }
+
+.item-check:checked.item-check::after { 
+    content: ""; 
+    background: url("../resources/tick.png"), var(--dark);
+    background-size: contain;   }
+
+.item-label {
+    max-width: 450px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    grid-area: label;
+    font-size: 3rem;
+    margin-left: 2rem;
+    width: max-content; }
+
+.item-check:checked + .item-label { text-decoration: line-through; }
+
+.item-controls {
+    grid-area: item;
+    grid-template: auto / repeat(4, min-content);
+    grid-template-areas: "sub count add";
+    grid-gap: 3rem;
+    align-items: center;
+    justify-self: end;
+    background: var(--teal);
+    padding: .25rem 1rem;
+    border: none;
+    border-radius: 20px;    }
+
+.item-controls * { font-size: 3rem; }
+
+.item-sub,
+.item-add {
+    background: none;
+    border: none;
+    cursor: pointer;    
+    transition: color .25s ease-in-out;
+    font-weight: bold;  }
+
+.item-sub { 
+    grid-area: sub; 
+    top: -0.25rem;
+    left: 0.25rem;  }
+
+.item-sub:hover,
+.item-sub:focus { color: rgb(165, 10, 60); }
+
+.item-count {
+    top: -.15rem;
+    left: .3rem;
+    grid-area: count;
+    cursor: default;    
+    font-weight: bold;  }
+
+.item-add { grid-area: add; }
+
+.item-add:hover,
+.item-add:focus { color: rgb(3, 70, 115);  }
+
+.item-del {
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-top: -.3rem;
+    margin-left: -1.8rem;
+    background: white;
+    mask-image: url("../resources/delete.svg");
+    background-size: contain;   
+    transition: background .25s ease-in-out;    }
+
+.item-del:hover,
+.item-del:focus {
+    cursor: pointer;
+    background: rgb(167, 6, 57);    }
+
+.item-divider {
+    grid-area: divider;
+    height: .3rem;
+    border: none;
+    border-radius: 100px;
+    background: var(--light);   }

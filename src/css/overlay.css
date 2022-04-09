@@ -1,0 +1,17 @@
+.app-container {
+    display: grid;
+    grid-template: 7rem 50rem / 70rem;
+    grid-template-areas:
+        "search"
+        "items" ;
+    grid-gap: 2rem;
+    background: var(--dark); 
+    padding: 5rem 3rem;
+    border: none;
+    border-radius: 30px;    }
+
+.items-container {
+    grid-area: items;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem; }

@@ -1,0 +1,48 @@
+.confirmation-container {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background: rgba(25, 25, 25, 0.7);
+    top: 0;
+    left: 0;    }
+
+.confirmation-content  {
+    display: grid;
+    grid-template: repeat(2, min-content) / repeat(2, min-content);
+    grid-template-areas:
+        "prompt prompt"
+        "confirm decline" ; 
+    grid-gap: 3rem;
+    background: var(--dark);
+    padding: 4rem 5rem;
+    border-radius: 50px;    }
+
+.confirmation-prompt  {
+    font-size: 2.7rem !important;
+    grid-area: prompt;
+    width: 40rem;
+    text-align: center;
+    margin-top: -.5rem; }
+
+.confirmation-content > button {
+    background: var(--teal);
+    border: none;
+    justify-self: center;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .15s ease-in-out, color .15s ease-in-out;    }
+
+.confirmation-content > button:hover,
+.confirmation-content > button:focus {
+    background: var(--darker);
+    color: var(--teal)  }
+
+.confirmation-content > button:active { box-shadow: inset 2px 2px 15px 0 black; }
+
+.confirmation-confirmation  { grid-area: confirm; }
+
+.confirmation-decline  { grid-area: decline; }
